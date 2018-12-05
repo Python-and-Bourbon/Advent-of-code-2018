@@ -1,7 +1,6 @@
 from string import ascii_lowercase, ascii_uppercase
-with open('input.txt', 'r') as inp: polymer = list(inp.read())
-letter_set, m = list(zip([i for i in ascii_lowercase], [i for i in ascii_uppercase])), len(polymer)
-for letter_tuple in letter_set:
+with open('input.txt', 'r') as inp: polymer, m = list(inp.read()), 50000 # input is 50000 characters long 
+for letter_tuple in list(zip([i for i in ascii_lowercase], [i for i in ascii_uppercase])):
     s = ''.join([i for i in polymer if i not in letter_tuple])
     n, i, j = len(s), 0, 1
     while j < n:
